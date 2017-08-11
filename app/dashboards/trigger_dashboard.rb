@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class MovieDashboard < Administrate::BaseDashboard
+class TriggerDashboard < Administrate::BaseDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,17 +9,13 @@ class MovieDashboard < Administrate::BaseDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     movie_triggers: Field::HasMany,
+    user_triggers: Field::HasMany,
     id: Field::Number,
-    title: Field::String,
-    runtime: Field::Number,
-    poster_path: Field::String,
-    release_date: Field::String,
-    release_status: Field::String,
-    original_language: Field::String,
+    name: Field::String,
+    user_trigger_id: Field::Number,
+    movie_trigger_id: Field::Number,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    overview: Field::String,
-    movie_trigger_id: Field::Number,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -29,26 +25,22 @@ class MovieDashboard < Administrate::BaseDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :movie_triggers,
+    :user_triggers,
     :id,
-    :title,
-    :runtime,
+    :name,
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :movie_triggers,
+    :user_triggers,
     :id,
-    :title,
-    :runtime,
-    :poster_path,
-    :release_date,
-    :release_status,
-    :original_language,
+    :name,
+    :user_trigger_id,
+    :movie_trigger_id,
     :created_at,
     :updated_at,
-    :overview,
-    :movie_trigger_id,
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -56,20 +48,16 @@ class MovieDashboard < Administrate::BaseDashboard
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
     :movie_triggers,
-    :title,
-    :runtime,
-    :poster_path,
-    :release_date,
-    :release_status,
-    :original_language,
-    :overview,
+    :user_triggers,
+    :name,
+    :user_trigger_id,
     :movie_trigger_id,
   ].freeze
 
-  # Overwrite this method to customize how movies are displayed
+  # Overwrite this method to customize how triggers are displayed
   # across all pages of the admin dashboard.
   #
-  def display_resource(movie)
-    "#{movie.title}"
+  def display_resource(trigger)
+    "#{trigger.name}"
   end
 end

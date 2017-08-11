@@ -1,0 +1,2 @@
+module MovieTriggersHelper
+end

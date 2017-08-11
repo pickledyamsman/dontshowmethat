@@ -1,0 +1,17 @@
+<%= form_with(model: movie_trigger, local: true) do |form| %>
+  <% if movie_trigger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie_trigger.errors.count, "error") %> prohibited this movie_trigger from being saved:</h2>
+
+      <ul>
+      <% movie_trigger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

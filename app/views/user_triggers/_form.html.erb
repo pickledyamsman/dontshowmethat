@@ -1,0 +1,17 @@
+<%= form_with(model: user_trigger, local: true) do |form| %>
+  <% if user_trigger.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user_trigger.errors.count, "error") %> prohibited this user_trigger from being saved:</h2>
+
+      <ul>
+      <% user_trigger.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

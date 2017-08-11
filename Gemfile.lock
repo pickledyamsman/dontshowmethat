@@ -51,6 +51,9 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (8.0.0)
     autoprefixer-rails (7.1.2.4)
       execjs
@@ -279,6 +282,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  annotate
   better_errors
   bootstrap (~> 4.0.0.alpha6)
   bourbon

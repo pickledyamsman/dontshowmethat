@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810131335) do
+ActiveRecord::Schema.define(version: 20170811223150) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "movie_triggers", force: :cascade do |t|
+    t.integer "movie_id"
+    t.integer "trigger_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "movies", force: :cascade do |t|
     t.string "title"
@@ -25,6 +32,22 @@ ActiveRecord::Schema.define(version: 20170810131335) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "overview"
+    t.integer "movie_trigger_id"
+  end
+
+  create_table "triggers", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_trigger_id"
+    t.integer "movie_trigger_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_triggers", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "trigger_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,6 +65,7 @@ ActiveRecord::Schema.define(version: 20170810131335) do
     t.datetime "updated_at", null: false
     t.string "name"
     t.integer "role"
+    t.integer "user_trigger_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

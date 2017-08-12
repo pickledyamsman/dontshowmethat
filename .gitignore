@@ -82,3 +82,14 @@ pickle-email-*.html
 
 # tilde files are usually backup files from a text editor
 *~
+
+# node modules
+node_modules
+
+# ignore assets compiled from running gulp
+/lib/assets/stylesheets
+/lib/assets/scripts
+
+# Ignore application configuration
+/config/application.yml
+config/secrets.yml

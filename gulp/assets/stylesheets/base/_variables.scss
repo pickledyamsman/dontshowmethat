@@ -1,0 +1,27 @@
+// Variables go here
+$pad: 1em;
+$pad-double: 2em;
+$pad-quad: 4em;
+$pad-half: 0.5em;
+
+
+// Screen size variables
+$phone: 480px;
+$tablet: 768px;
+$desktop: 992px;
+$desktop-lg: 1200px;
+
+// Border radius for buttons and other
+// things
+$border-radius: 4px;
+
+// Font sizes
+$main-font-size: convert-points-to-rems(20);
+$header-font-size: convert-points-to-rems(32);
+$quiz-header-font-size: convert-points-to-rems(16);
+$large-font-size: convert-points-to-rems(52);
+
+// Headings
+$page-heading-font-size: $large-font-size;
+$label-heading-font-size: $main-font-size;
+$question-heading-font-size: $quiz-header-font-size;

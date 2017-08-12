@@ -1,0 +1,26 @@
+// Global styles go here
+
+body {
+  // Set 100 as the global font weight to use the light
+  // Museo Sans font that we have.
+  font-weight: 100;
+  background-color: $brand-pink;
+}
+// apply styles to HTML elements
+// to make views framework-neutral
+main {
+  background-color: #fff;
+  width: 100%;
+  padding: 0; // necessary for full-width color backgrounds
+}
+
+
+// Make all images responsive by default
+img {
+  @extend .img-responsive;
+  margin: 0 auto;
+}
+
+p {
+  font-size: $main-font-size;
+}

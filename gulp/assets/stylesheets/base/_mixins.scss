@@ -1,0 +1,44 @@
+@import "variables";
+@mixin tablet_or_smaller {
+  @media only screen and (max-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin tablet_up {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media only screen and (max-width: $phone) {
+    @content;
+  }
+}
+
+@mixin phone_up {
+  @media only screen and (min-width: $phone) {
+    @content;
+  }
+}
+
+@mixin flex-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}

@@ -1,4 +1,14 @@
 <p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_movie_path(@movie) %> |
-<%= link_to 'Back', movies_path %>
+<div class="container" >
+  <div><%= link_to ' << Back to movies', movies_path %></div><hr />
+  <div class="panel panel-info">
+    <div class="panel-heading"><%= @movie.title %></div>
+    <div class="panel-body">
+      <div>Title: <%= @movie.title %></div>
+      <div>Runtime: <%= @movie.runtime %></div>
+      <div>Release Date: <%= @movie.release_date %></div>
+      <div>Release Status: <%= @movie.release_status %></div>
+      <div>Overview: <%= @movie.overview %></div>
+    </div>
+  </div>
+</div>

@@ -1,5 +1,6 @@
+# Base controller for movie_triggers
 class MovieTriggersController < ApplicationController
-  before_action :set_movie_trigger, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie_trigger, only: %i[show edit update destroy]
 
   # GET /movie_triggers
   # GET /movie_triggers.json
@@ -62,13 +63,12 @@ class MovieTriggersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movie_trigger
-      @movie_trigger = MovieTrigger.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def movie_trigger_params
-      params.fetch(:movie_trigger, {})
-    end
+  def set_movie_trigger
+    @movie_trigger = MovieTrigger.find(params[:id])
+  end
+
+  def movie_trigger_params
+    params.fetch(:movie_trigger, {})
+  end
 end

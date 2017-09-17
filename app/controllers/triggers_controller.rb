@@ -1,5 +1,6 @@
+# Base controller for triggers
 class TriggersController < ApplicationController
-  before_action :set_trigger, only: [:show, :edit, :update, :destroy]
+  before_action :set_trigger, only: %i[show edit update destroy]
 
   # GET /triggers
   # GET /triggers.json
@@ -62,13 +63,12 @@ class TriggersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_trigger
-      @trigger = Trigger.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def trigger_params
-      params.fetch(:trigger, {})
-    end
+  def set_trigger
+    @trigger = Trigger.find(params[:id])
+  end
+
+  def trigger_params
+    params.fetch(:trigger, {})
+  end
 end

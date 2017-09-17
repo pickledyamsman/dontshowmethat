@@ -1,5 +1,6 @@
+# Base controller for user_triggers
 class UserTriggersController < ApplicationController
-  before_action :set_user_trigger, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_trigger, only: %i[show edit update destroy]
 
   # GET /user_triggers
   # GET /user_triggers.json
@@ -62,13 +63,12 @@ class UserTriggersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user_trigger
-      @user_trigger = UserTrigger.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_trigger_params
-      params.fetch(:user_trigger, {})
-    end
+  def set_user_trigger
+    @user_trigger = UserTrigger.find(params[:id])
+  end
+
+  def user_trigger_params
+    params.fetch(:user_trigger, {})
+  end
 end
